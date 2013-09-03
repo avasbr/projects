@@ -10,7 +10,7 @@ class PGM():
 		"""
 		self.factors = factors 		# list of factors
 		self.rvarToFactor = {}		# dictionary mapping variables to factors
-		self.rvars = [] 			# list of all the variables
+		self.rvars = np.array([]) 	# numpy array of all the variables
 		
 		for factor in factors:
 			self.rvars = np.union1d(factor.scope,self.rvars)
