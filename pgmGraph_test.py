@@ -65,7 +65,7 @@ class testPGM(unittest.TestCase):
 
 	def test_compute_marginal(self):
 		margFactor = pgmf.DiscreteFactor(scope=np.array([2,3]),card=np.array([2,2]),val=np.array([0.0858,0.0468,0.1342,0.7332]))
-		margFactor_ = self.pgm.compute_marginal(np.array([2,3]),self.evid)
+		margFactor_ = self.pgm.compute_min_neighbor_marginal(np.array([2,3]),self.evid)
 		margFactor_.val = margFactor_.val/np.sum(margFactor_.val)
 
 		np.testing.assert_equal(margFactor.scope,margFactor_.scope)
